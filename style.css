@@ -1,56 +1,224 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* -----------------------------
+   GLOBAL
+------------------------------ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+    background:#000;
+    color:#fff;
+
+    font-family:-apple-system,
+                BlinkMacSystemFont,
+                "SF Pro Display",
+                "Segoe UI",
+                sans-serif;
 }
 
-.container {
-    width: 90%;
-    max-width: 420px;
-    text-align: center;
+/* -----------------------------
+   SCREENS
+------------------------------ */
+
+main{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    transition:opacity .8s ease;
+
 }
 
-h1 {
-    font-size: 2.8rem;
-    margin-bottom: 16px;
-    letter-spacing: 1px;
+.hidden{
+
+    opacity:0;
+    pointer-events:none;
+
 }
 
-.subtitle {
-    color: #94a3b8;
-    margin-bottom: 48px;
-    font-size: 1rem;
-    line-height: 1.6;
+/* -----------------------------
+   TERMINAL
+------------------------------ */
+
+.terminal{
+
+    width:min(92%,700px);
+
+    padding:40px 28px;
+
 }
 
-#startButton {
-    width: 100%;
-    padding: 18px;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 16px;
-    background: #2563eb;
-    color: white;
-    cursor: pointer;
-    transition: transform .2s ease, background .2s ease;
+.terminal-header{
+
+    font-size:14px;
+
+    letter-spacing:4px;
+
+    opacity:.65;
+
+    margin-bottom:34px;
+
+    text-transform:uppercase;
+
 }
 
-#startButton:hover {
-    background: #1d4ed8;
-    transform: translateY(-2px);
+#terminal-output{
+
+    white-space:pre-line;
+
+    line-height:2;
+
+    font-size:18px;
+
+    min-height:300px;
+
 }
 
-#startButton:active {
-    transform: scale(0.98);
+/* -----------------------------
+   CURSOR
+------------------------------ */
+
+.cursor{
+
+    display:inline-block;
+
+    width:10px;
+
+    height:22px;
+
+    background:white;
+
+    animation:blink 1s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+/* -----------------------------
+   AUTH CARD
+------------------------------ */
+
+.card{
+
+    width:min(92%,430px);
+
+    padding:40px 28px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.02);
+
+    backdrop-filter:blur(8px);
+
+    text-align:center;
+
+}
+
+.card h1{
+
+    font-size:30px;
+
+    margin-bottom:22px;
+
+    font-weight:600;
+
+}
+
+.card p{
+
+    line-height:1.8;
+
+    opacity:.75;
+
+    margin-bottom:40px;
+
+}
+
+/* -----------------------------
+   BUTTON
+------------------------------ */
+
+button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    background:white;
+
+    color:black;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+button:active{
+
+    transform:scale(.98);
+
+}
+
+/* -----------------------------
+   MOBILE
+------------------------------ */
+
+@media (max-width:600px){
+
+    .terminal{
+
+        padding:28px 22px;
+
+    }
+
+    #terminal-output{
+
+        font-size:16px;
+
+    }
+
+    .card h1{
+
+        font-size:25px;
+
+    }
+
 }
