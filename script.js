@@ -49,9 +49,11 @@ async function startBootSequence() {
 
     await sleep(800);
 
-    bootScreen.classList.add("hidden");
-    authScreen.classList.remove("hidden");
-    authScreen.style.opacity = "1";
+    bootScreen.style.display = "none";
+
+authScreen.classList.remove("hidden");
+authScreen.style.display = "flex";
+authScreen.style.opacity = "1";
 }
 
 window.addEventListener("load", startBootSequence);
