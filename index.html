@@ -4,52 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surprise</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Boot Screen -->
-    <main id="boot-screen">
-        <div class="terminal">
+<!-- ================= BOOT ================= -->
 
-            <div class="terminal-header">
-                SECURE TERMINAL v1.0
-            </div>
-
-            <div id="terminal-output"></div>
-
-            <div class="cursor-row">
-                <span class="cursor"></span>
-            </div>
-
+<main id="boot-screen">
+    <div class="terminal">
+        <div class="terminal-header">
+            SECURE TERMINAL v1.0
         </div>
-    </main>
 
-    <!-- Authentication Screen -->
-    <main id="auth-screen" class="hidden">
+        <div id="terminal-output"></div>
 
-        <div class="card">
+        <div class="cursor-row">
+            <span class="cursor"></span>
+        </div>
+    </div>
+</main>
 
-            <h1>Identity Verification Required</h1>
+<!-- ================= AUTH ================= -->
 
-            <p>
-                Welcome, Agent.
-                <br><br>
-                Clearance has not yet been granted.
-                <br>
-                Complete authentication to access the case file.
-            </p>
+<main id="auth-screen" class="hidden">
 
-            <button id="startButton">
-                Begin Investigation
+    <div class="card">
+
+        <h1>Identity Verification Required</h1>
+
+        <p>
+            Welcome, Agent.
+            <br><br>
+            Clearance has not yet been granted.
+        </p>
+
+        <button id="startButton">
+            Begin Investigation
+        </button>
+
+    </div>
+
+</main>
+
+<!-- ================= CASE FILE ================= -->
+
+<main id="case-screen" class="hidden">
+
+    <div class="card">
+
+        <h1>CASE FILE #001</h1>
+
+        <p>
+            Recover all evidence to unlock the verification key.
+        </p>
+
+        <div class="evidence-list">
+
+            <button class="evidence-btn" data-id="1">
+                Evidence 1
+            </button>
+
+            <button class="evidence-btn" data-id="2">
+                Evidence 2
+            </button>
+
+            <button class="evidence-btn" data-id="3">
+                Evidence 3
+            </button>
+
+            <button class="evidence-btn" data-id="4">
+                Memorable Place
             </button>
 
         </div>
 
-    </main>
+        <div id="progress">
 
-    <script src="script.js"></script>
+            Progress: 0 / 4
+
+        </div>
+
+    </div>
+
+</main>
+
+<!-- ================= EVIDENCE ================= -->
+
+<main id="evidence-screen" class="hidden">
+
+    <div class="card">
+
+        <h1 id="evidence-title"></h1>
+
+        <p id="evidence-text"></p>
+
+        <button id="completeEvidence">
+            Mark as Collected
+        </button>
+
+    </div>
+
+</main>
+
+<!-- ================= KEY ================= -->
+
+<main id="key-screen" class="hidden">
+
+    <div class="card">
+
+        <h1>Verification Key Found</h1>
+
+        <h2>MCLNM</h2>
+
+        <button id="continueButton">
+            Continue to Level 2
+        </button>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
 
 </body>
 </html>
