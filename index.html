@@ -9,21 +9,47 @@
 </head>
 <body>
 
-<div class="container">
+    <!-- Boot Screen -->
+    <main id="boot-screen">
+        <div class="terminal">
 
-    <h1>Marriage HQ</h1>
+            <div class="terminal-header">
+                SECURE TERMINAL v1.0
+            </div>
 
-    <p class="subtitle">
-        Classified Investigation Terminal
-    </p>
+            <div id="terminal-output"></div>
 
-    <button id="startButton">
-        Begin Investigation
-    </button>
+            <div class="cursor-row">
+                <span class="cursor"></span>
+            </div>
 
-</div>
+        </div>
+    </main>
 
-<script src="script.js"></script>
+    <!-- Authentication Screen -->
+    <main id="auth-screen" class="hidden">
+
+        <div class="card">
+
+            <h1>Identity Verification Required</h1>
+
+            <p>
+                Welcome, Agent.
+                <br><br>
+                Clearance has not yet been granted.
+                <br>
+                Complete authentication to access the case file.
+            </p>
+
+            <button id="startButton">
+                Begin Investigation
+            </button>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
