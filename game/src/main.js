@@ -4,31 +4,39 @@ const config = {
 
     type: Phaser.AUTO,
 
-    width: 800,
+    parent: "game",
 
-    height: 450,
+    width: 390,
 
-    backgroundColor: "#87CEEB",
+    height: 844,
 
-    physics: {
+    backgroundColor: "#7ec0ee",
 
-        default: "arcade",
+    scale:{
 
-        arcade: {
+        mode:Phaser.Scale.FIT,
 
-            gravity: {
+        autoCenter:Phaser.Scale.CENTER_BOTH
 
-                y: 900
+    },
 
+    physics:{
+
+        default:"arcade",
+
+        arcade:{
+
+            gravity:{
+                y:1200
             },
 
-            debug: false
+            debug:false
 
         }
 
     },
 
-    scene: [GameScene]
+    scene:[GameScene]
 
 };
 
